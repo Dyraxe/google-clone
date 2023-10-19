@@ -23,7 +23,7 @@ function SearchHeader() {
           <RiSettings3Line className="header-icon" />
           <TbGridDots className="header-icon" />
         </div>
-        <button className="ml-2 rounded-md bg-blue-500 px-6 py-2 font-medium text-white transition-all hover:shadow-md hover:brightness-105">
+        <button className="ml-2 rounded-md bg-blue-500 px-2 py-2 font-medium text-white transition-all hover:shadow-md hover:brightness-105 sm:px-6">
           Sign in
         </button>
       </div>

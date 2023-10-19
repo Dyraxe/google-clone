@@ -20,7 +20,7 @@ function SearchBox() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="ml-10 mr-5 flex max-w-3xl flex-grow items-center space-x-4 rounded-full border border-gray-300 px-6 py-3 shadow-lg"
+      className="ml-5 mr-5 flex max-w-3xl flex-grow items-center space-x-4 rounded-md border border-gray-300 px-2 py-1 shadow-lg sm:ml-10 sm:rounded-full sm:px-6 sm:py-2 lg:py-3"
     >
       <input
         value={searchField}
@@ -30,7 +30,7 @@ function SearchBox() {
       />
       <RxCross2
         onClick={() => setSearchField("")}
-        className="cursor-pointer text-2xl text-gray-500 sm:mr-2"
+        className="hidden cursor-pointer text-2xl text-gray-500 sm:mr-2 sm:inline-flex"
       />
       <BsFillMicFill className="mr-3 hidden border-l-2 border-gray-300 pl-4 text-4xl text-blue-500 sm:inline-flex" />
       <AiOutlineSearch
