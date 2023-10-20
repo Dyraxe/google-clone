@@ -10,7 +10,7 @@ export default function SearchLayout({ children }) {
   return (
     <>
       <SearchHeader />
-      <main>{children}</main>
+      <main className="pb-24">{children}</main>
     </>
   );
 }

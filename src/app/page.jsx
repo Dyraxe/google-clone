@@ -6,7 +6,7 @@ function page() {
   return (
     <>
       <HomeHeader />
-      <div className="mt-24 flex select-none flex-col items-center">
+      <main className="mt-24 flex select-none flex-col items-center">
         <Image
           width={300}
           height={100}
@@ -14,7 +14,7 @@ function page() {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png"
         />
         <HomeSearch />
-      </div>
+      </main>
     </>
   );
 }

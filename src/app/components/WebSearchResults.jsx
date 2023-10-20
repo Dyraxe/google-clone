@@ -2,7 +2,7 @@ import Link from "next/link";
 import Parser from "html-react-parser";
 function WebSearchResults({ results }) {
   return (
-    <div className="mx-auto w-full px-3 pb-24 sm:pl-[5%] md:pl-[15%] lg:pl-52">
+    <div className="mx-auto w-full px-3 sm:pl-[5%] md:pl-[15%] lg:pl-52">
       <p className="mb-5 mt-3 text-sm text-gray-500">
         About {results?.searchInformation?.formattedTotalResults} results (
         {results?.searchInformation?.formattedSearchTime} seconds)

@@ -14,7 +14,6 @@ function SearchBox() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!searchField.trim() || searchTerm === searchField) return;
-    console.log(searchField);
     router.push(`/search/web?searchTerm=${searchField}`);
   }
   return (

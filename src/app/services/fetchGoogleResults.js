@@ -1,6 +1,9 @@
-export default async function fetchGoogleResults(query) {
-  const res =
-    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API}&cx=${process.env.GOOGLE_SEARCH_CONTEXT_API}&q=${query}
+export default async function fetchGoogleResults(query, imageSearch = false) {
+  const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${
+    process.env.GOOGLE_API
+  }&cx=${process.env.GOOGLE_SEARCH_CONTEXT_API}&q=${query}${
+    imageSearch && "&searchType=image"
+  }
 `);
   if (!res.ok)
     throw new Error(
