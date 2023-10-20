@@ -8,7 +8,7 @@ function Error({ reset, error }) {
   //   }, [error]);
   return (
     <div className="error-bg">
-      <h1 className="font-semibold">{error.message}</h1>
+      <h1 className="font-semibold">Something went wrong</h1>
       <button onClick={() => reset()} className="btn bg-blue-500 text-white">
         Try Again
       </button>

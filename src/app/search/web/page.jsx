@@ -1,14 +1,10 @@
+import WebSearchResults from "@/app/components/WebSearchResults";
+import fetchGoogleResults from "@/app/services/fetchGoogleResults";
+
 async function WebSearchPage({ searchParams: { searchTerm } }) {
-  const res =
-    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API}&cx=${process.env.GOOGLE_SEARCH_CONTEXT_API}&q=${searchTerm}
-`);
-  if (!res.ok)
-    throw new Error(
-      "Ops! Something went wrong while the data was being fetched",
-    );
-  const data = await res.json();
-  const results = data.items;
-  if (!results)
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+  const { data, hasResults } = await fetchGoogleResults(searchTerm);
+  if (!hasResults)
     return (
       <div className="error-bg">
         <h1 className="font-semibold">{`No results could be found by "${searchTerm}"`}</h1>
@@ -17,13 +13,7 @@ async function WebSearchPage({ searchParams: { searchTerm } }) {
         </p>
       </div>
     );
-  return (
-    <>
-      {results.map((result) => (
-        <p key={result.cacheId}>{result.title}</p>
-      ))}
-    </>
-  );
+  return <WebSearchResults results={data} />;
 }
 
 export default WebSearchPage;
