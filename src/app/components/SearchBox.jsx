@@ -33,10 +33,12 @@ function SearchBox() {
         className="hidden cursor-pointer text-2xl text-gray-500 sm:mr-2 sm:inline-flex"
       />
       <BsFillMicFill className="mr-3 hidden border-l-2 border-gray-300 pl-4 text-4xl text-blue-500 sm:inline-flex" />
-      <AiOutlineSearch
-        onClick={handleSubmit}
-        className="hidden cursor-pointer text-2xl text-blue-500 sm:inline-flex"
-      />
+      <div className="px-2 text-center transition-all delay-300 hover:rounded-full hover:bg-blue-50 hover:text-blue-800 hover:shadow-md active:translate-y-[1px]">
+        <AiOutlineSearch
+          onClick={handleSubmit}
+          className="text-blue- hidden cursor-pointer text-xl   sm:inline-flex"
+        />
+      </div>
     </form>
   );
 }
