@@ -4,17 +4,18 @@ import { BsFillMicFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function SearchBox() {
   const router = useRouter();
+  const fullPath = usePathname();
   const searchTerm = useSearchParams().get("searchTerm");
   const [searchField, setSearchField] = useState(searchTerm || "");
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!searchField.trim() || searchTerm === searchField) return;
-    router.push(`/search/web?searchTerm=${searchField}`);
+    router.push(`${fullPath}?searchTerm=${searchField}`);
   }
   return (
     <form
